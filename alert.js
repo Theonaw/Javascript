@@ -81,12 +81,63 @@ console.log(`monTableau values: ${monTableau}`);
 console.log(`variable x value: ${x}`);
 alert(monTableau.length);
 
-== égalité
-=== égalité parfaite
+== égal
+=== strictement égal
 > supérieur
 < inférieur
 >= égal ou sup
 <= égal ou infé
-!= n'est pas égal
-!== 
+!= différent
+!== strictement différent
+
+var note
+note=parseFloat(prompt("Quel est ta note ?:"))
+switch(true){
+    case note == 0:
+        alert("Va réviser!!!")
+        console.log(`La note choisit est ${note}`)
+    break
+    case note >= 1 && note <= 9:
+        alert("Ajourné!!!")
+        console.log(`La note choisit est ${note}`)
+    break
+    case note >= 10 && note <= 11:
+        alert("Passable")
+        console.log(`La note choisit est ${note}`)
+    break
+    case note >= 12 && note <= 13:
+        alert("A bien")
+        console.log(`La note choisit est ${note}`)
+    break
+    case note >= 14 && note <= 16:
+        alert("Bien")
+        console.log(`La note choisit est ${note}`)
+    break
+    case note >= 17 && note <= 19:
+        alert("Très bien")
+        console.log(`La note choisit est ${note}`)
+    break
+    case note == 20:
+        alert("Excelent")
+        console.log(`La note choisit est ${note}`)
+    break
+    default: alert("Noter une note comprise entre 0 et 20")
+    console.log(`La note choisit est ${note} et elle est incorrecte`)
+}
+
+
+prix=parseFloat(prompt('Veuillez deviner le prix entre 15000€ et 80000€:'));
+ if(prix == 64759){
+    alert(`gg beau gosse`)
+}else if((prix < 64759)&&(prix >= 15000)){
+    alert(`Dommage c'est plus`)
+}else if((prix > 64759)&&(prix <= 80000)){
+    alert(`Dommage c'est moins`)
+}else{
+    alert(`Tu n'as pas mis un nombre entre 15000€ et 80000€`)
+}
+
+Les boucles
+while = tant que ...
+do while = faire tant que ...
 */
