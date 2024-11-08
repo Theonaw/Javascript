@@ -125,19 +125,200 @@ switch(true){
     console.log(`La note choisit est ${note} et elle est incorrecte`)
 }
 
-
-prix=parseFloat(prompt('Veuillez deviner le prix entre 15000€ et 80000€:'));
- if(prix == 64759){
-    alert(`gg beau gosse`)
-}else if((prix < 64759)&&(prix >= 15000)){
-    alert(`Dommage c'est plus`)
-}else if((prix > 64759)&&(prix <= 80000)){
-    alert(`Dommage c'est moins`)
-}else{
-    alert(`Tu n'as pas mis un nombre entre 15000€ et 80000€`)
-}
+resultat=Math.floor(Math.random()*(80000-15000))+15000;
+do{
+    prix=parseFloat(prompt('Veuillez deviner le prix entre 15000€ et 80000€:'));
+    if(prix == resultat){
+        alert(`gg beau gosse`)
+    }else if((prix < resultat)&&(prix >= 15000)){
+        alert(`Dommage c'est plus`)
+    }else if((prix > resultat)&&(prix <= 80000)){
+        alert(`Dommage c'est moins`)
+    }else{
+        alert(`Tu n'as pas mis un nombre entre 15000€ et 80000€`)
+    }
+}while (prix != resultat)
 
 Les boucles
 while = tant que ...
-do while = faire tant que ...
+do ... while = faire ... tant que ...
+
+
+poids=parseFloat(prompt("Quel poids faites vous ?"));
+taille=parseFloat(prompt("Quel taille faites vous ?"));
+imc=poids/(taille*taille);
+alert(imc)
+switch(true){
+    case imc < 16.5 && imc > 0:
+        alert("Maigreur extrême - dénutrition")
+    break
+    case imc < 18.5 && imc >= 16.5:
+        alert("Maigreur")
+    break
+    case imc < 25 && imc >= 18.5:
+        alert("Corpulence normal")
+    break
+    case imc < 30 && imc >= 25:
+        alert("Surpoids ou pré-obésité")
+    break
+    case imc < 35 && imc >= 30:
+        alert("Obésité modérée(classe 1)")
+    break
+    case imc < 40 && imc >= 35:
+        alert("Obésité sévère (classe 2)")
+    break
+    case imc >= 40:
+        alert("Obésité morbide (classe 3)")
+    break
+    default: alert("Choisisez une taille et un poids manquante ou/et correcte")
+}
+
+do{
+    num1=parseInt(prompt("donner le 1er chiffre")); 
+    num2=parseInt(prompt("donner le 2nd chiffre")); 
+    signe=prompt("donner l'opération souhaitée")
+    if(signe=="*"){
+    res=multiplication(num1,num2); 
+    alert(res); 
+    } else if (signe=="+"){
+    res=addition(num1,num2); 
+    alert(res); 
+    }else if (signe =="-"){
+    res=soustraction(num1,num2); 
+    alert(res);
+    }else if(signe =="/"){
+    res=division(num1,num2); 
+    alert(res);
+    }else {
+    alert("signe inconnu"); 
+    }
+
+    function multiplication(num1,num2){
+    var resultat=num1*num2; 
+    return resultat; 
+    }
+
+    function addition(num1,num2){
+    var resultat=num1+num2; 
+    return resultat; 
+    }
+
+    function soustraction(num1,num2){
+    var resultat=num1-num2; 
+    return resultat; 
+    }
+    function division(num1,num2){
+    var resultat=num1/num2; 
+    return resultat;
+    }
+}while(signe !="+"||signe !="-"||signe !="*"||signe !="/")
+do{
+    euro=parseInt(prompt("Choisisez le prix à convertir:"))
+    signe=prompt("Choisisez la devise pour convertir: \n dinar \n dollar canadien \n dollar USA \n ancien franc \n franc suisse")
+    if(signe=="dinar"){
+        res=euro*147.54
+        alert(`${res} dinar`)
+    }else if(signe=="dollar canadien"){
+        res=euro*1.46
+        alert(`${res} dollar canadien`)
+    }else if(signe=="dollar USA"){
+        res=euro*1.10
+        alert(`${res} dollar USA`)
+    }else if(signe=="ancien franc"){
+        res=euro*6.55
+        alert(`${res} ancien franc`)
+    }else if(signe=="franc suisse"){
+        res=euro*0.95
+        alert(`${res} franc suisse`)
+    }else{
+        alert("Taux de conversion inconnue, veillez réessayer")
+    }
+}while(signe !== "dinar"||signe !== "dollar canadien"||signe !== "dollar USA"||signe !== "ancien franc"||signe !== "franc suisse")
+alert("fini")
+
+
+resultat=parseInt(prompt("Veuillez donner un nombre svp ?"))
+while(resultat > 0){
+    alert(`${resultat}`)
+    resultat = resultat - 1
+}
+alert(`0 !!! BOOOOOOM !!!`)
+
+
+statut=prompt("Saisissez votre statut professionnel: \n Cadre = 1 \n Agent de maitrise = 2 \n Profession libérale = 3 \n Portage salarial = 4 \n Fonction publique = 5")
+brut=parseInt(prompt("Saisissez votre salaire brut:"))
+if(statut == 1){
+    resultat=brut-(brut*0.25)
+    alert(`Votre salaire net pour votre statut est de ${resultat}€`)
+}else if(statut == 2){
+    resultat=brut-(brut*0.22)
+    alert(`Votre salaire net pour votre statut est de ${resultat}€`)
+}else if(statut == 3){
+    resultat=brut-(brut*0.45)
+    alert(`Votre salaire net pour votre statut est de ${resultat}€`)
+}else if(statut == 4){
+    resultat=brut-(brut*0.51)
+    alert(`Votre salaire net pour votre statut est de ${resultat}€`)
+}else if(statut == 5){
+    resultat=brut-(brut*0.15)
+    alert(`Votre salaire net pour votre statut est de ${resultat}€`)
+}else{
+    alert(`Calcul non pris en compte`)
+}
+
+
+do{
+statut=prompt("Saisissez votre statut professionnel: \n Cadre = 1 \n Agent de maitrise = 2 \n Profession libérale = 3 \n Portage salarial = 4 \n Fonction publique = 5")
+brut=parseInt(prompt("Saisissez votre salaire brut:"))
+switch(true){
+    case statut == 1:
+        resultat=brut-(brut*0.25)
+        alert(`Votre salaire net pour votre statut est de ${resultat}€`)
+    break
+    case statut == 2:
+        resultat=brut-(brut*0.22)
+        alert(`Votre salaire net pour votre statut est de ${resultat}€`)
+    break
+    case statut == 3:
+        resultat=brut-(brut*0.45)
+        alert(`Votre salaire net pour votre statut est de ${resultat}€`)
+    break
+    case statut == 4:
+        resultat=brut-(brut*0.51)
+        alert(`Votre salaire net pour votre statut est de ${resultat}€`)
+    break
+    case statut == 5:
+        resultat=brut-(brut*0.15)
+        alert(`Votre salaire net pour votre statut est de ${resultat}€`)
+    break
+    default: alert(`Calcul non pris en compte`)
+}
+suite=prompt(`Vouliez vous continuer ? \n Oui = O \n Non = N`)
+}while(suite == `O`)
+
+var listefruits=["banane","pomme","orange","mangue","grenade","kiwi","clémentine"]
+do{
+    reponse=prompt("Donne moi un fruit:")
+    resultat=listefruits.includes(reponse)
+    if(resultat==true){
+        alert("C'est gagné !!!")
+    }else{
+        alert("Dommage recommence")
+    }
+    suite=prompt(`Vouliez vous continuer ? \n Oui = O \n Non = N`)
+}while(suite=="O")
+
+var listeDeCourse=["savon","lait","viande de grison","tomate","chaussette","cigarette"]
+listeDeCourse.push("sucre")
+alert(listeDeCourse)
+var list2=["riz","poisson"]
+alert(listeDeCourse.concat(list2))
+listeDeCourse.splice(1,1)
+alert(listeDeCourse)
+
+chiffre=parseInt(prompt("Donner un chiffre"))
+for (nb=0;nb<=10;nb++){
+    resultat=chiffre*nb
+    alert(`${chiffre}*${nb}=${resultat}`)
+}
 */
